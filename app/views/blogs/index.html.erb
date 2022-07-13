@@ -1,0 +1,15 @@
+<%= render "users/user_actions" %>
+<h1>Blogs</h1>
+<p>
+  <%= link_to "New blog", new_blog_path, class: "btn btn-primary" %>
+</p>
+<div id="blogs">
+  <%= paginate @blogs %>
+  <% @blogs.each do |blog| %>
+    <%= render blog %>
+    <p>
+      <%= link_to "Show this blog", blog, class: "btn btn-secondary" %>
+    </p>
+  <% end %>
+  <%= paginate @blogs %>
+</div>

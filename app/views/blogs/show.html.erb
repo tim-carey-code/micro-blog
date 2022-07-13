@@ -1,0 +1,8 @@
+<%= render @blog %>
+<div class="d-grid gap-2 w-25">
+  <% if current_user == @blog.user %>
+    <%= link_to "Edit this blog", edit_blog_path(@blog), class: "btn btn-primary" %>
+    <%= button_to "Destroy this blog", @blogs, class: "btn btn-danger", method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }%>
+  <% end %>
+  <%= link_to "Back to blogs", blogs_path, class: "btn btn-secondary" %>
+</div>
