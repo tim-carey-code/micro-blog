@@ -1,15 +1,16 @@
-<%= render "users/user_actions" %>
-<h1>Blogs</h1>
-<p>
+<h1>Tim's Micro-Blog</h1>
+<div class="d-grid gap-2 d-md-flex m-2">
+  <%= render "users/user_actions" %>
   <%= link_to "New blog", new_blog_path, class: "btn btn-primary" %>
-</p>
+</div>
 <div id="blogs">
   <%= paginate @blogs %>
+  <hr />
   <% @blogs.each do |blog| %>
-    <%= render blog %>
-    <p>
-      <%= link_to "Show this blog", blog, class: "btn btn-secondary" %>
-    </p>
+    <div class="border-bottom border-primary m-2">
+      <%= render blog %>
+      <%= link_to "Show this blog", blog, class: "btn btn-secondary mb-2" %>
+    </div>
   <% end %>
-  <%= paginate @blogs %>
 </div>
+<%= paginate @blogs %>

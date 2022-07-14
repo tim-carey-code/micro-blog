@@ -1,17 +1,18 @@
-<div id="<%= dom_id blog %>">
-  <p>
-    <strong>Title:</strong>
-    <%= blog.title %>
-  </p>
-  <p>
-    <strong>Content:</strong>
-    <%= blog.content %>
-  </p>
-  <p>
-    <strong>Posted By:</strong>
-    <%= blog.user.email %>
-  </p>
-  <% if blog.image.attached? %>
+<h2>Blog Post:</h2>
+<p>
+  <strong>Title:</strong>
+  <%= blog.title %>
+</p>
+<p>
+  <strong>Content:</strong>
+  <%= blog.content %>
+</p>
+<p>
+  <strong>Posted By:</strong>
+  <%= blog.user.email %>
+</p>
+<% if blog.image.attached? %>
+  <div>
     <%= image_tag blog.image.variant(:medium), class: "mb-2" %>
-  <% end %>
-</div>
+  </div>
+<% end %>

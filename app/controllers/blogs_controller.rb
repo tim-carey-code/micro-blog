@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @blogs = Blog.order(:created_at).page params[:page]
+    @blogs = Blog.order(created_at: :desc).page params[:page]
   end
 
   def show

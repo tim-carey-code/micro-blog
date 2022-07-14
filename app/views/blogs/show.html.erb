@@ -1,5 +1,8 @@
 <%= render @blog %>
-<div class="d-grid gap-2 w-25">
+<%= render "comment_form" %>
+<hr />
+<%= render "comments" %>
+<div class="d-grid gap-2 d-md-flex mt-2">
   <% if current_user == @blog.user %>
     <%= link_to "Edit this blog", edit_blog_path(@blog), class: "btn btn-primary" %>
     <%= button_to "Destroy this blog", @blogs, class: "btn btn-danger", method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }%>

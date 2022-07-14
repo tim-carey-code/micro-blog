@@ -1,0 +1,13 @@
+<div>
+  <h2>Add A Comment</h2>
+  <%= form_with model: [@blog, @blog.comments.build] do |f| %>
+    <%= f.text_field :message %>
+    <% unless not user_signed_in? %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :email, value: current_user.email %>
+    <% end %>
+    <div>
+      <%= f.submit "Create comment", class: "btn btn-primary mt-2" %>
+    </div>
+  <% end %>
+</div>
