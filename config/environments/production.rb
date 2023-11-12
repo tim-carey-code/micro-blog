@@ -90,4 +90,5 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.action_controller.default_url_options = { host: '147.182.131.108', port: 80 }
 end
